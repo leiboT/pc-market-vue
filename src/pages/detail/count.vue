@@ -319,9 +319,10 @@ export default {
         district: this.district.value,
         period: this.period.value
       };
-      this.$http.post('/api/getPrice',data).then(
+      data.v = 'getPrice';
+      this.$http.post('//db.leibo.group', data).then(
         (res) => {
-          this.price = res.data.amount;
+          this.price = res.data.data.amount;
         },
         (error) => {
           console.log(error)

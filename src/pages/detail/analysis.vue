@@ -205,10 +205,10 @@ export default {
         period : this.period.value,
         version : buyVersionsArray.join(",")
       };
-      this.$http.post("/api/getPrice",reqParams).then(
+      reqParams.v = 'getPrice';
+      this.$http.post("//db.leibo.group", reqParams).then(
         (res) => {
-          this.price = res.data.amount;
-          console.log(res.data);
+          this.price = res.data.data.amount;
         },
         (erro) => {
 
@@ -230,9 +230,10 @@ export default {
         version : buyVersionsArray.join(","),
         bankId : this.bankId
       };
-      this.$http.post("/api/createOrder",reqParams).then(
+      reqParams.v = 'createOrder';
+      this.$http.post("//db.leibo.group", reqParams).then(
         (res) => {
-          this.orderId = res.data.orderId;
+          this.orderId = res.data.data.orderId;
           this.isShowDialog = false;
           this.isShowCheckOrder = true;
         },
