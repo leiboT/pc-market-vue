@@ -11,13 +11,17 @@ import DetailCountPage from './pages/detail/count'
 import DetailForecastPage from './pages/detail/forecast'
 import DetailPublishPage from './pages/detail/publish'
 import OrderListPage from './pages/orderList'
-//Vue.config.productionTip = false
+Vue.config.productionTip = false
 
 import store from  './store/index'
 Vue.use(VueRouter);
 Vue.use(VueResource);
+Vue.http.options.emulateJSON = true;
+Vue.http.options.emulateHTTP = true;
+
 let router = new VueRouter({
   mode: 'history',
+  base: '/pcMall/',
   routes: [
     {
       path: '/',
