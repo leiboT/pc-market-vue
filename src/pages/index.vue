@@ -52,10 +52,10 @@
       slideShow
     },
     created: function (){
-      this.$http.post('api/getNewsList')
+      this.$http.post('//db.leibo.group', {v : 'getNewsList'})
         .then(
         (res) => {
-          this.newsList = res.data
+          this.newsList = res.data.data
         },
         (err) => {
           console.log(err)
