@@ -2,7 +2,7 @@ import Vue from 'vue'
 
 const state = {
     orderList: [],
-    params: {},
+    params: {v: 'getOrderList'},
     currentOrder: 'asc'
 };
 const getters = {
@@ -12,9 +12,9 @@ const getters = {
 };
 const actions = {
     fetchOrderList ({commit, state}){
-        Vue.http.post('/api/getOrderList', state.params).then(
+        Vue.http.post('//db.leibo.group', state.params).then(
             (res) =>{
-                commit('updateOrderList', res.data.list)
+                commit('updateOrderList', res.data.data.list)
             },(err) => {
 
             }
@@ -26,8 +26,7 @@ const mutations = {
         state.orderList = payload
     },
     updateParams (state, {key, val}){
-        state.params[key] = val
-        console.log(state.params)
+        state.params[key] = val;
     },
     sortOrderList (state, headItem){
         if (state.currentOrder === 'asc') {
