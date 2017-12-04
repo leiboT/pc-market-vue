@@ -8,7 +8,7 @@
 * vue-router 做为前端路由
 * vuex 做为状态管理插件
 
-* [商场首页](http://leibo.group/app)
+* [商场首页](http://leibo.group/pcMall)
     * 商品详情页
     * 订单页
 
