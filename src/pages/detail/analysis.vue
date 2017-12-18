@@ -217,7 +217,6 @@ export default {
     },
     onChangeBanks (bankObj){
       this.bankId = bankObj.id;
-      console.log(this.bankId)
     },
     confirmBuy (){
       let buyVersionsArray = _.map(this.versions, (item) => {

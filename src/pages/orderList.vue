@@ -120,7 +120,7 @@ export default {
         return this.$store.getters.getOrderList
       },
       set (val){
-        console.log(val);
+        //console.log(val);
         //this.orderList = val;
       }
     }
@@ -191,7 +191,7 @@ export default {
   mounted (){
     //this.getTableList();
     this.$store.dispatch('fetchOrderList');
-    console.log(this.$store);
+    //console.log(this.$store);
   }
 }
 
