@@ -80,9 +80,9 @@ export default {
         this.errorText = '部分选项未通过'
       }else{
         this.errorText = '';
-        this.$http.get('api/login').then(
+        this.$http.post('//db.leibo.group', {v : 'login'}).then(
           (res) =>{
-            this.$emit('has-log',res.data)
+            this.$emit('has-log',res.data.data)
           },
           (error) =>{
             console.log(error)

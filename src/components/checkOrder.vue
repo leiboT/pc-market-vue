@@ -41,8 +41,8 @@
   },
   methods: {
     checkStatus (){
-      this.$http.post('/api/checkOrder1',{
-        orderId: this.orderId
+      this.$http.post('//db.leibo.group',{
+        v: this.orderId
       }).then(
         (res) => {
           this.isShowSuccessDialog = true;
