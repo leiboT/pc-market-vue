@@ -80,6 +80,9 @@
       resetComponents (){
         eventBus.$emit('reset-component')
       }
+    },
+    created (){
+      console.log('源码地址:https://github.com/leiboT/pc-market-vue');
     }
   }
 </script>
